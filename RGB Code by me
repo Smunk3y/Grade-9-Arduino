@@ -1,0 +1,43 @@
+int red_pin= 2;
+int green_pin= 3;
+int blue_pin= 4;
+
+void setup () {
+  pinMode(red_pin, OUTPUT);
+  pinMode(green_pin, OUTPUT);
+  pinMode(blue_pin, OUTPUT);
+}
+
+void loop () {
+RGB(255,0,0);
+delay (1600);
+RGB(0,255,0);
+delay (1600);
+RGB(0,0,255);
+delay (1600);
+RGB (255,255,0);
+delay (1600);
+RGB(255,0,255);
+delay (1600);
+RGB(0,255,255);
+delay (1600);
+RGB(255,125,125);
+delay (1600);
+RGB(125,255,125);
+delay (1600);
+RGB(125,125,255);
+delay (1600);
+RGB(125,0,0);
+delay (1600);
+RGB(0,0,128);
+delay (1600);
+RGB(176,196,222);
+}
+
+void RGB (int red_light_value, int green_light_value, int blue_light_value)
+
+ {
+  analogWrite(red_pin, red_light_value);
+  analogWrite(green_pin, green_light_value);
+  analogWrite(blue_pin, blue_light_value);
+}
