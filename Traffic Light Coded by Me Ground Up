@@ -1,0 +1,45 @@
+int top_red= 2;
+int top_yellow= 3;
+int top_green= 4;
+int bottom_green= 5;
+int bottom_yellow= 6;
+int bottom_red= 7;
+
+void setup () {
+  pinMode(top_red, OUTPUT);
+  pinMode(top_yellow, OUTPUT);
+  pinMode(top_green, OUTPUT);
+  pinMode(bottom_green, OUTPUT);
+  pinMode(bottom_yellow, OUTPUT);
+  pinMode(bottom_red, OUTPUT);
+}
+
+void loop()
+{
+oneAfterAnotherNoLoop();
+}
+
+
+void oneAfterAnotherNoLoop()
+{
+  digitalWrite(bottom_red, LOW);
+  digitalWrite(top_red, HIGH);
+  digitalWrite(bottom_green, HIGH);
+  delay(2500);
+  digitalWrite(bottom_yellow, HIGH);
+  digitalWrite(bottom_green, LOW);
+  delay(2500);
+  digitalWrite(bottom_yellow, LOW);
+  digitalWrite(bottom_red, HIGH);
+  delay(2500);
+  digitalWrite(top_green, HIGH);
+  digitalWrite(top_red, LOW);
+  delay(2500);
+  digitalWrite(top_yellow, HIGH);
+  digitalWrite(top_green, LOW);
+  delay(2500);
+  digitalWrite(top_red, HIGH);
+  digitalWrite(bottom_red, HIGH);
+  digitalWrite(top_yellow, LOW);
+  delay(2500);
+}
