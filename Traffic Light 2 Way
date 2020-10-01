@@ -1,4 +1,4 @@
-int top_red= 2;
+int top_red= 2;       //Sets the Led Lights to Certin Pins
 int top_yellow= 3;
 int top_green= 4;
 int bottom_green= 5;
@@ -6,7 +6,7 @@ int bottom_yellow= 6;
 int bottom_red= 7;
 
 void setup () {
-  pinMode(top_red, OUTPUT);
+  pinMode(top_red, OUTPUT);       //Sets the led lights to output mode
   pinMode(top_yellow, OUTPUT);
   pinMode(top_green, OUTPUT);
   pinMode(bottom_green, OUTPUT);
@@ -20,12 +20,12 @@ oneAfterAnotherNoLoop();
 }
 
 
-void oneAfterAnotherNoLoop()
+void oneAfterAnotherNoLoop()         
 {
-  digitalWrite(bottom_red, LOW);
+  digitalWrite(bottom_red, LOW);     //Turn's on or off the traffic light lights
   digitalWrite(top_red, HIGH);
   digitalWrite(bottom_green, HIGH);
-  delay(2500);
+  delay(2500);                       //The Delay Between The swtiches in ms
   digitalWrite(bottom_yellow, HIGH);
   digitalWrite(bottom_green, LOW);
   delay(2500);
