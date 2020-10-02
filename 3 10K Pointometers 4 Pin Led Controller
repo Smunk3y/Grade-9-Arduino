@@ -1,0 +1,26 @@
+int red_pin= 2;        //Sets Pin for Led Colour
+int green_pin= 3;      //Sets Pin for Led Colour
+int blue_pin= 4;       //Sets Pin for Led Colour
+int red_sensPin= A0;   //Sets Pin For Pointometer
+int blue_sensPin= A1;  //Sets Pin For Pointometer
+int green_sensPin= A2; //Sets Pin For Pointometer
+int red_sensValue= 0;  //Sets Value to 0
+int green_sensValue= 0;//Sets Value to 0
+int blue_sensValue= 0; //Sets Value to 0
+
+void setup () {
+  Serial.begin(9600);        //Sets The speed of Data Talkign -Google
+  pinMode(red_pin, OUTPUT);  //Sets Led Pins to out put
+  pinMode(green_pin, OUTPUT);//Sets Led Pins to out put
+  pinMode(blue_pin, OUTPUT); //Sets Led Pins to out put
+} 
+
+void loop () {
+ int red_sensValue = analogRead(red_sensPin);    //Checks the Value of the pointometer
+ int blue_sensValue = analogRead(blue_sensPin);  //Checks the Value of the pointometer
+ int green_sensValue = analogRead(green_sensPin);//Checks the Value of the pointometer
+
+ analogWrite(red_pin, red_sensValue/80);    //Sets the colour of the led
+ analogWrite(blue_pin, blue_sensValue/80);  //Sets the colour of the led
+ analogWrite(green_pin, green_sensValue/80);//Sets the colour of the led
+}
