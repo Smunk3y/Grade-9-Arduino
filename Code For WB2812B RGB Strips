@@ -1,0 +1,53 @@
+#include <FastLED.h>
+#define NUM_LEDS 60
+#define DATA_PIN 2
+
+CRGB leds[NUM_LEDS];
+
+int red_pin= 8;
+int green_pin= 9;
+int blue_pin= 10;
+
+
+void setup() { 
+  delay(8000);
+  Serial.begin(57600);
+  LEDS.addLeds<WS2812,DATA_PIN,RGB>(leds,NUM_LEDS);
+  LEDS.setBrightness(120 );
+  pinMode(red_pin, OUTPUT);
+  pinMode(green_pin, OUTPUT);
+  pinMode(blue_pin, OUTPUT);
+
+  for(int q = 0; q < NUM_LEDS; q++) {
+    leds[q] = CRGB(255, 255, 255);
+    FastLED.show(); 
+    delay(220);
+  }
+  for(int m = 0; m < 255; m++) {
+    RGF(m, m, m);
+    delay(5);
+  }
+}
+
+
+void loop() { 
+  
+  for(int i = 0; i < NUM_LEDS; i++) {
+    leds[i] = CRGB(0, 255, 0);
+    FastLED.show(); 
+    delay(30);
+  }
+  delay(250);
+  for(int i = (NUM_LEDS)-1; i >= 0; i--) {
+    leds[i] = CRGB(0, 0, 255);
+    FastLED.show();
+    delay(30);
+  }
+  delay(250);
+}
+
+void RGF (int red_light_value, int green_light_value, int blue_light_value){
+  analogWrite(red_pin, red_light_value);
+  analogWrite(green_pin, green_light_value);
+  analogWrite(blue_pin, blue_light_value);
+}
