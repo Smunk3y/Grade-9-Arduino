@@ -1,0 +1,80 @@
+int red_light_pin= 8;
+int green_light_pin = 9;
+int blue_light_pin = 10;
+int red_light_pin2= 5;
+int green_light_pin2 = 6;
+int blue_light_pin2 = 7;
+int red_light_pin3= 2;
+int green_light_pin3 = 3;
+int blue_light_pin3 = 4;
+void setup() {
+  pinMode(red_light_pin, OUTPUT);
+  pinMode(green_light_pin, OUTPUT);
+  pinMode(blue_light_pin, OUTPUT);
+  pinMode(red_light_pin2, OUTPUT);
+  pinMode(green_light_pin2, OUTPUT);
+  pinMode(blue_light_pin2, OUTPUT);
+  RGB_color(255, 255, 255); // White
+  RGB_color2(255, 255, 255); // White
+  RGB_color3(255, 255, 255); // White
+  delay(5000);
+}
+void loop() {
+  int  d1 = 2500;
+  RGB_color(255, 0, 0); // Red 1 -
+  delay(d1);
+  RGB_color2(0, 255, 0); // Green 2 -
+  delay(d1);
+  RGB_color3(0, 0, 255); // Blue 3 -
+  delay(d1);
+  RGB_color(0, 255, 255); // Cyan 1 --
+  delay(d1);
+  RGB_color2(255, 0, 0); // Red 2 -- 
+  delay(d1);
+  RGB_color3(0, 255, 0); // Green 3 -- 
+  delay(d1);
+  RGB_color(255, 0, 255); // Magenta 1 ---
+  delay(d1);
+  RGB_color2(0, 255, 255); // Cyan 2 --- 
+  delay(d1);
+  RGB_color3(255, 0, 0); // Red 3 ---
+  delay(d1);
+  RGB_color(255, 40, 0); // orange 1 ----
+  delay(d1);
+  RGB_color2(255, 0, 255); // Magenta 2 ----
+  delay(d1);
+  RGB_color3(0, 255, 255); // Cyan 3 ----
+  delay(d1);
+  RGB_color(255, 255, 255); // White 1 0
+  delay(d1);
+  RGB_color2(255, 40, 0); // orange 2 0
+  delay(d1);
+  RGB_color3(255, 0, 255); // Magenta 3 0
+  delay(d1);
+  RGB_color2(255, 255, 255); // White 2 00
+  delay(d1);
+  RGB_color3(255, 40, 0); // orange 3 00
+  delay(d1);
+  RGB_color2(255, 255, 255); // white 3 00
+  delay(d1);
+}
+void RGB_color(int red_light_value, int green_light_value, int blue_light_value)
+ {
+  analogWrite(red_light_pin, red_light_value);
+  analogWrite(green_light_pin, green_light_value);
+  analogWrite(blue_light_pin, blue_light_value);
+}
+
+void RGB_color2(int red_light_value, int green_light_value, int blue_light_value)
+ {
+  analogWrite(red_light_pin2, red_light_value);
+  analogWrite(green_light_pin2, green_light_value);
+  analogWrite(blue_light_pin2, blue_light_value);
+}
+
+void RGB_color3(int red_light_value, int green_light_value, int blue_light_value)
+ {
+  analogWrite(red_light_pin3, red_light_value);
+  analogWrite(green_light_pin3, green_light_value);
+  analogWrite(blue_light_pin3, blue_light_value);
+}
