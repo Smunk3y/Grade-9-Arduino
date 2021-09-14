@@ -1,0 +1,23 @@
+#include <FastLED.h>
+#define numberled 300 
+#define data 10
+
+CRGB leds[numberled];
+
+void setup() { 
+	Serial.begin(57600);
+	LEDS.addLeds<WS2812,data,RGB>(leds,numberled);
+	LEDS.setBrightness(84);
+}
+
+void fadeall() { for(int i = 0; i < numberled; i++) { leds[i].nscale8(250); } }
+
+void loop() { 
+	static uint8_t hue = 0;
+	for(int i = 0; i < numberled; i++) {
+		leds[i] = CHSV(hue++, 255, 255);
+		FastLED.show(); 
+		fadeall();
+		delay(10);
+	}
+}
